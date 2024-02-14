@@ -1,15 +1,17 @@
 #include "print_board.hpp"
-class ConsoleBoardCreator{
+
   Board board;
 
-public:
-  ConsoleBoardCreator(Board inputted_board)
+  ConsoleBoardCreator::ConsoleBoardCreator(Board inputted_board)
   {
-    board = inputted_board;
+    this->board = inputted_board;
   }
 
-  string formatted_board()
+  string ConsoleBoardCreator::formatted_board()
   {
-    return " " + board.get_mark(1) + " | " + board.get_mark(2) + " |   \n-----------\n   |   |   \n-----------\n   |   |   ";
+    return " " + this->board.get_mark(1) + " | " + this->board.get_mark(2) + " |   \n-----------\n   |   |   \n-----------\n   |   |   ";
   }
-};
+
+int main () {
+  return 0;
+}

@@ -4,19 +4,22 @@
 
 using namespace std;
 
-  array<string, 9> board;
-
   Board::Board() {
     for (int i = 0; i < 9; i++)
     {
-      board[i] = '_';
+      this->board[i] = '_';
     }
   }
 
-  void Board::make_move(int cell, char mark) {
-    board[cell - 1] = mark;
+  void Board::make_move(int cell, char mark){
+    this->board[cell - 1] = mark;
   }
 
-  string Board::get_mark(int cell) {
-    return board[cell - 1];
+  string Board::get_mark(int cell)
+  {
+    return this->board[cell - 1];
   }
+
+int main () {
+  return 0;
+}

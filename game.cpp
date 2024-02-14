@@ -4,14 +4,14 @@
 using namespace std;
 
  
-  Game(Board *board_ptr, Rules *rules_ptr, ConsoleBoardCreator *creator_ptr)
+ Game::Game(Board *board_ptr, Rules *rules_ptr, ConsoleBoardCreator *creator_ptr)
   {
     board = board_ptr;
     rules = rules_ptr;
     creator = creator_ptr;
   }
 
-  void start()
+  void Game::start()
   {
     string user_input = "";
 

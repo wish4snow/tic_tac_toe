@@ -7,6 +7,6 @@ class Game {
 		ConsoleBoardCreator *creator;
 
 	public:
-		Game(Board *board_ptr, Rules *rules_ptr, ConsoleBoardCreator *creator_ptr)
-		void start()
+		Game(Board *board_ptr, Rules *rules_ptr, ConsoleBoardCreator *creator_ptr);
+		void start();
 };
