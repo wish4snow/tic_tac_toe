@@ -1,6 +1,5 @@
-in
-class ConsoleBoardCreator
-{
+#include "print_board.hpp"
+class ConsoleBoardCreator{
   Board board;
 
 public:
