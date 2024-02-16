@@ -1,5 +1,6 @@
 #include <iostream>
 #include <array>
+#include <string>
 #include "board.hpp"
 
 using namespace std;
@@ -7,7 +8,7 @@ using namespace std;
   Board::Board() {
     for (int i = 0; i < 9; i++)
     {
-      this->board[i] = '_';
+      this->board[i] = to_string(i + 1);
     }
   }
 
