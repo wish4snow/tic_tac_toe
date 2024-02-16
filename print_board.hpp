@@ -6,6 +6,6 @@ class ConsoleBoardCreator {
 		Board *board;
 		
 	public :
-		ConsoleBoardCreator(Board inputted_board);
+		ConsoleBoardCreator(Board *inputted_board);
 		string formatted_board();
 };
