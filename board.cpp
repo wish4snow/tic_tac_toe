@@ -20,6 +20,3 @@ using namespace std;
     return this->board[cell - 1];
   }
 
-int main () {
-  return 0;
-}
