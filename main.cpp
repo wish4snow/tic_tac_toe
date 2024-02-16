@@ -1,6 +1,6 @@
 #include <iostream>
 // #include "board.cpp"
-#include "print_board.cpp"
+#include "print_board.h"
 int main()
 {
   Board board;
