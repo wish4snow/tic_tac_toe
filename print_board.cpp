@@ -1,7 +1,7 @@
 // #include "print_board.hpp"
 #include "print_board.h"
 
-  Board *board;
+  //Board *board;
 
   ConsoleBoardCreator::ConsoleBoardCreator(Board *inputted_board)
   {

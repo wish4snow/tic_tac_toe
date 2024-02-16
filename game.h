@@ -1,4 +1,4 @@
-#include "board.h"
+#include "rules.h"
 
 class Game {
 	private:

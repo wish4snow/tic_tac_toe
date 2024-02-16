@@ -1,6 +1,9 @@
-#include "board.h"
+#include "print_board.h"
 
 class Rules {
+  private:
+    Board *board;
+
   public:
     Rules(Board *inputted_board);
     bool validate_input(int input);

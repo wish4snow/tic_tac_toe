@@ -1,24 +1,23 @@
 #include <iostream>
 // #include "board.cpp"
-#include "print_board.h"
+//#include "print_board.h"
+#include "game.h"
 int main()
 {
   Board board;
   Board *board_ptr = &board;
 
-  board.make_move(1, 'X');
-  board.make_move(2, 'O');
-  board.make_move(3, 'X');
-  // board.make_move(4, 'O');
-  // board.make_move(5, 'O');
-  // board.make_move(6, 'O');
-  // board.make_move(7, 'O');
-  // board.make_move(8, 'O');
-  // board.make_move(9, 'O');
-
   ConsoleBoardCreator creator = ConsoleBoardCreator(board_ptr);
   ConsoleBoardCreator *creator_ptr = &creator;
 
-  cout << creator.formatted_board() << endl;
+  //cout << creator.formatted_board() << endl;
+
+  Rules rules = Rules(board_ptr);
+  Rules *rules_ptr = &rules;
+
+  Game game = Game(board_ptr, rules_ptr, creator_ptr);
+  game.start();
+
+
   return 0;
 }

@@ -1,4 +1,4 @@
-#include "game.hpp"
+#include "game.h"
 #include <iostream>
 
 using namespace std;
@@ -6,9 +6,9 @@ using namespace std;
  
  Game::Game(Board *board_ptr, Rules *rules_ptr, ConsoleBoardCreator *creator_ptr)
   {
-    board = board_ptr;
-    rules = rules_ptr;
-    creator = creator_ptr;
+    this->board = board_ptr;
+    this->rules = rules_ptr;
+    this->creator = creator_ptr;
   }
 
   void Game::start()
