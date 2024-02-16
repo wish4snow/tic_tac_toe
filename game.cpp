@@ -14,13 +14,22 @@ using namespace std;
   void Game::start()
   {
     string user_input = "";
+    int turn_number = 0;
 
     while (rules->in_progress())
     {
       cout << creator->formatted_board();
       cout << "Which cell?" << endl;
       cin >> user_input;
-      board->make_move(stoi(user_input), 'X');
+
+      if (turn_number % 2 == 0) {
+        board->make_move(stoi(user_input), 'X');
+      } else {
+        board->make_move(stoi(user_input), 'O');
+      }
+
+      turn_number ++;
+      
     }
   }
 
