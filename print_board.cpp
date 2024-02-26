@@ -18,6 +18,6 @@
     
     " ----------- " + "\n  " +
 
-    this->board->get_mark(7) + " | " + this->board->get_mark(8) + " | " + this->board->get_mark(9);
+    this->board->get_mark(7) + " | " + this->board->get_mark(8) + " | " + this->board->get_mark(9) + "\n";
   }
 
