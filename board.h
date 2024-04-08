@@ -1,5 +1,7 @@
+#pragma once
 #include <string>
 #include <array>
+#include <iostream>
 
 using namespace std;
 
@@ -12,4 +14,5 @@ class Board {
 		explicit Board();
 		void make_move(int cell, char mark);
 		string get_mark(int cell);
+		void make_empty_board();
 };

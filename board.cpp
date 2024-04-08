@@ -6,12 +6,15 @@
 using namespace std;
 
   Board::Board() {
-    for (int i = 0; i < 9; i++)
-    {
-      this->board[i] = to_string(i + 1);
-    }
+    this->make_empty_board();
   }
 
+
+  void Board::make_empty_board() {
+    for (int i = 0; i < 9; i++){
+      this->board[i] = to_string(i + 1);
+    }    
+  }
   void Board::make_move(int cell, char mark){
     this->board[cell - 1] = mark;
   }

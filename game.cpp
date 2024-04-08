@@ -1,14 +1,18 @@
 #include "game.h"
+#include "exit_menu.hpp"
 #include <iostream>
 
 using namespace std;
 
  
- Game::Game(Board *board_ptr, Rules *rules_ptr, ConsoleBoardCreator *creator_ptr)
+ Game::Game(Board *board_ptr, Rules *rules_ptr, ConsoleBoardCreator *creator_ptr, Player *player_one_ptr, Player *player_two_ptr)
   {
-    this->board = board_ptr;
-    this->rules = rules_ptr;
-    this->creator = creator_ptr;
+    board = board_ptr;
+    rules = rules_ptr;
+    creator = creator_ptr;
+    player_one = player_one_ptr;
+    player_two = player_two_ptr;
+    current_player = player_one;
   }
 
   void Game::start() {
@@ -31,21 +35,23 @@ using namespace std;
       
 
       cout << "\nWhich cell would you like to pick, Player " << player_number << "?" << endl;
-      cin >> user_input;
+      current_player->move();
+      switch_player();
+      // cin >> user_input;
 
-      while (!rules->validate_input(stoi(user_input))) {
+      // // while (!rules->validate_input(stoi(user_input))) {
         
-        cout << creator->formatted_board();
-        cout << "\nTry a diferent input please."<< endl;
-        cout << "Which cell would you like to pick, Player " << player_number << "?" << endl;
-        cin >> user_input;
-      }
+      // //   cout << creator->formatted_board();
+      // //   cout << "\nTry a diferent input please."<< endl;
+      // //   cout << "Which cell would you like to pick, Player " << player_number << "?" << endl;
+      // //   cin >> user_input;
+      // // }
 
-      if (turn_number % 2 == 0) {
-        board->make_move(stoi(user_input), 'X');
-      } else {
-        board->make_move(stoi(user_input), 'O');
-      }
+      // if (turn_number % 2 == 0) {
+      //   board->make_move(stoi(user_input), 'X');
+      // } else {
+      //   board->make_move(stoi(user_input), 'O');
+      // }
 
       if (!rules->in_progress()) {
         cout << "\n" << creator->formatted_board() << endl;
@@ -59,5 +65,21 @@ using namespace std;
         break;
       }
     }
+    ExitMenu(this).execute();
+
   }
 
+    void Game::reset(){
+      board->make_empty_board();
+      current_player = player_one;
+    }
+
+void Game::switch_player() {
+
+  if (current_player == player_one) {
+    current_player = player_two;
+  } else{
+    current_player = player_one;
+  }
+  
+}

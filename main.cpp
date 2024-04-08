@@ -2,6 +2,9 @@
 // #include "board.cpp"
 //#include "print_board.h"
 #include "game.h"
+#include "player.hpp"
+#include "human_player.hpp"
+#include "computer_player.hpp"
 int main()
 {
   Board board;
@@ -15,7 +18,10 @@ int main()
   Rules rules = Rules(board_ptr);
   Rules *rules_ptr = &rules;
 
-  Game game = Game(board_ptr, rules_ptr, creator_ptr);
+  HumanPlayer player_one = HumanPlayer(&board, 'X');
+  ComputerPlayer player_two = ComputerPlayer(&board, 'O');
+
+  Game game = Game(board_ptr, rules_ptr, creator_ptr, &player_one, &player_two);
   game.start();
 
 
