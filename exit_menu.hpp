@@ -2,6 +2,9 @@
 
 #include "game.h"
 
+#include "player.hpp"
+#include "human_player.hpp"
+
 class ExitMenu
 {
 private:
@@ -10,5 +13,5 @@ private:
 public:
   ExitMenu(Game *game);
   void execute();
-  void start_menu();
+  static void start_menu(Board *board, Player *player1, Player *player2);
 };

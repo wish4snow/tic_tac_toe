@@ -3,10 +3,13 @@
 
 using namespace std;
 
-ExitMenu::ExitMenu(Game *game)
-{
+ExitMenu::ExitMenu(Game *game){
   this->game = game;
 }
+
+
+
+
 
 void ExitMenu::execute()
 {
@@ -25,7 +28,7 @@ void ExitMenu::execute()
 }
 
 
-void ExitMenu::start_menu() {
+void ExitMenu::start_menu(Board *board, Player *player1, Player *player2) {
   cout << "Hello, welcome to tic tac toe!" << endl;
   cout << "Enter a number to chose mode.\n" << endl;
   cout << "1: human vs human" << endl;
@@ -41,6 +44,11 @@ void ExitMenu::start_menu() {
   cout << "1: human vs human" << endl;
   cout << "2: human vs computer\n\n:";
     cin >> user_input;
+  }
+
+  if (stoi(user_input) == 1) {
+    *player1 = HumanPlayer(board, 'X');
+    *player2 = HumanPlayer(board, 'O');
   }
 
 }
