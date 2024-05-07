@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include <array>
+#include <vector>
 #include <iostream>
 
 using namespace std;
@@ -8,11 +8,12 @@ using namespace std;
 class Board {
 	
 	private:
-		array<string, 9> board;
+		int board_size;
+		vector<string> board;
 
 	public:
-		explicit Board();
+		explicit Board(int board_size = 3);
 		void make_move(int cell, char mark);
 		string get_mark(int cell);
-		void make_empty_board();
+		void make_empty_board(int board_size = 3);
 };

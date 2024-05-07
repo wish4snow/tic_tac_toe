@@ -35,7 +35,7 @@ void ExitMenu::start_menu() {
 
   cin >> user_input;
 
-  while (!stoi(user_input) == 1 && !stoi(user_input) == 2) {
+  while (!(stoi(user_input) == 1) && !(stoi(user_input) == 2)) {
   cout << "Please enter a valid input\n\n";
   cout << "Enter a number to chose mode.\n" << endl;
   cout << "1: human vs human" << endl;
