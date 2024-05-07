@@ -6,7 +6,7 @@
 using namespace std;
 
   Board::Board(int board_size) {
-    this->make_empty_board();
+    this->make_empty_board(board_size);
   }
 
 

@@ -15,6 +15,7 @@ void ExitMenu::execute()
 {
   string user_input;
   cout << "Do you want to play again?" << endl;
+  cout << ":";
   cin >> user_input;
   if (user_input == "no" || user_input == "n")
   {

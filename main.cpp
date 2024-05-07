@@ -9,7 +9,7 @@
 
 int main()
 {
-  Board board;
+  Board board = Board(10);
   Board *board_ptr = &board;
 
   ConsoleBoardCreator creator = ConsoleBoardCreator(board_ptr);
@@ -20,11 +20,16 @@ int main()
   Rules rules = Rules(board_ptr);
   Rules *rules_ptr = &rules;
 
-  Player player_one;
+  //Player player_one;
   // Player player_two;
+    HumanPlayer player_one = HumanPlayer(&board, 'X');
+    HumanPlayer player_two = HumanPlayer(&board, 'O');
 
-  Player *player_one_ptr;// = &player_one;
-  Player *player_two_ptr;// = &player_two;
+  HumanPlayer *player_one_ptr = &player_one;
+  HumanPlayer *player_two_ptr = &player_two;
+
+
+
 
   ExitMenu::start_menu(board_ptr, player_one_ptr, player_two_ptr);
 

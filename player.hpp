@@ -3,6 +3,6 @@
 class Player
 {
 public:
-  Player();
+  // Player();
   virtual void move() = 0;
 };
