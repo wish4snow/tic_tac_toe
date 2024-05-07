@@ -15,8 +15,9 @@ using namespace std;
     {
       this->board.push_back(to_string(i + 1));
     } 
+    this->board_size = board_size;
   }
-  
+
   void Board::make_move(int cell, char mark){
     this->board[cell - 1] = mark;
   }
@@ -24,5 +25,9 @@ using namespace std;
   string Board::get_mark(int cell)
   {
     return this->board[cell - 1];
+  }
+
+  int Board::get_board_size() {
+    return this->board_size;
   }
 

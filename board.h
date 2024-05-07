@@ -14,6 +14,7 @@ class Board {
 	public:
 		explicit Board(int board_size = 3);
 		void make_move(int cell, char mark);
-		string get_mark(int cell);
 		void make_empty_board(int board_size = 3);
+		string get_mark(int cell);
+		int get_board_size();
 };
