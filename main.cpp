@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-  Board board = Board();
+  Board board = Board(4);
   Board *board_ptr = &board;
 
   ConsoleBoardCreator creator = ConsoleBoardCreator(board_ptr);

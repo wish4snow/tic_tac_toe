@@ -37,30 +37,17 @@ using namespace std;
       cout << "\nWhich cell would you like to pick, Player " << player_number << "?" << endl;
       current_player->move(rules);
       switch_player();
-      // cin >> user_input;
 
-      // // while (!rules->validate_input(stoi(user_input))) {
-        
-      // //   cout << creator->formatted_board();
-      // //   cout << "\nTry a diferent input please."<< endl;
-      // //   cout << "Which cell would you like to pick, Player " << player_number << "?" << endl;
-      // //   cin >> user_input;
-      // // }
-
-      // if (turn_number % 2 == 0) {
-      //   board->make_move(stoi(user_input), 'X');
-      // } else {
-      //   board->make_move(stoi(user_input), 'O');
-      // }
 
       if (!rules->in_progress()) {
         cout << "\n" << creator->formatted_board() << endl;
         cout << "Good job Player " << player_number << "!\nYou have won this game!" << endl;
+        break;
       }
 
       turn_number ++;
       
-      if (turn_number >= 9) {
+      if (turn_number >= (board->get_board_size() * board->get_board_size())) {
         cout << "Tie game." << endl;
         break;
       }
@@ -71,6 +58,7 @@ using namespace std;
   }
 
     void Game::reset(){
+      cout << "hello\n";
       board->make_empty_board();
       current_player = player_one;
     }

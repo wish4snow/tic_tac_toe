@@ -9,11 +9,12 @@ ComputerPlayer::ComputerPlayer(Board *inputted_board, char symbol){
 }
 
 void ComputerPlayer::move(Rules *rules_ptr){
-  int number = (rand() % (9 - 0 + 1)) + 0;
+  int number = (rand() % ((board->get_board_size() * board->get_board_size()) + 1));
   
-  // while (get_mark(number) != 'X' || get_mark(number) != 'O'){
-  //   int number = (rand() % (9 - 0 + 1)) + 0;
-  // }
+  while (!rules_ptr->validate_input(number)){
+    number = (rand() % ((board->get_board_size() * board->get_board_size()) + 1));
+    cout << number << endl;
+  }
 
   board->make_move(number, symbol);
 }
