@@ -23,8 +23,8 @@ void ExitMenu::execute()
   }
   else
   {
-    game->reset();
-    game->start();
+    this->game->reset();
+    this->game->start();
   }
 }
 

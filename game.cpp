@@ -48,18 +48,19 @@ using namespace std;
       turn_number ++;
       
       if (turn_number >= (board->get_board_size() * board->get_board_size())) {
+        cout << "\n" << creator->formatted_board() << endl;
         cout << "Tie game." << endl;
         break;
       }
     }
-
+    this->reset();
     ExitMenu(this).execute();
 
   }
 
     void Game::reset(){
       cout << "hello\n";
-      board->make_empty_board();
+      board->make_empty_board(board->get_board_size());
       current_player = player_one;
     }
 
