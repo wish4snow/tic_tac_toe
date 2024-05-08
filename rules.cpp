@@ -47,12 +47,10 @@ string Rules::has_winner() {
     }
 
     if (x_count == board->get_board_size()) {
-      cout << "from row" << endl;
       return "X";
     }
 
     if (o_count == board->get_board_size()) {
-      cout << "from row" << endl;
       return "O";
     }
     
@@ -63,7 +61,6 @@ string Rules::has_winner() {
           x_count = 0;
       o_count = 0;
     for (int j = i; j <= (board->get_board_size() * board->get_board_size()) + (-1 * board->get_board_size()) + i; j += board->get_board_size()) {
-      cout << j;
 
       if (board->get_mark(j) == "X") {
         x_count++;
@@ -74,12 +71,10 @@ string Rules::has_winner() {
       }
       
       if (x_count == board->get_board_size()) {
-        cout << "from col" << endl;
         return "X";
       }
 
       if (o_count == board->get_board_size()) {
-        cout << "from col" << endl;
         return "O";
       }
 
@@ -91,7 +86,6 @@ string Rules::has_winner() {
       o_count = 0;
 
   for (int i = 0; i < board->get_board_size(); i++){
-    cout << "`" << (i + 1) + (i * board->get_board_size()) << "`";
     if (board->get_mark((i + 1) + (i * board->get_board_size())) == "X") {
       x_count++;
     }
@@ -101,31 +95,33 @@ string Rules::has_winner() {
   }
 
         if (x_count == board->get_board_size()) {
-        cout << "from col" << endl;
         return "X";
       }
 
       if (o_count == board->get_board_size()) {
-        cout << "from col" << endl;
         return "O";
       }
-    // if (board->get_mark(1) == board->get_mark(2) && board->get_mark(2) == board->get_mark(3)) {
-    //   return board->get_mark(1);
-    // } else if (board->get_mark(4) == board->get_mark(5) && board->get_mark(5) == board->get_mark(6)) {
-    //   return board->get_mark(4);
-    // } else if (board->get_mark(7) == board->get_mark(8) && board->get_mark(8) == board->get_mark(9)) {
-    //   return board->get_mark(7);
-    // } else if (board->get_mark(1) == board->get_mark(4) && board->get_mark(4) == board->get_mark(7)) {
-    //   return board->get_mark(1);
-    // } else if (board->get_mark(2) == board->get_mark(5) && board->get_mark(5) == board->get_mark(8)) {
-    //   return board->get_mark(5);
-    // } else if (board->get_mark(3) == board->get_mark(6) && board->get_mark(6) == board->get_mark(9)) {
-    //   return board->get_mark(3);
-    // } else if (board->get_mark(1) == board->get_mark(5) && board->get_mark(5) == board->get_mark(9)) {
-    //   return board->get_mark(1);
-    // } else if (board->get_mark(3) == board->get_mark(5) && board->get_mark(5) == board->get_mark(7)) {
-    //   return board->get_mark(3);
-    // } 
+
+        x_count = 0;
+      o_count = 0;
+
+  for (int i = 0; i < board->get_board_size(); i++){
+    if (board->get_mark(((i + 1) * board->get_board_size()) - i) == "X") {
+      x_count++;
+    }
+        if (board->get_mark(((i + 1) * board->get_board_size()) - i) == "O") {
+      o_count++;
+    }
+  }
+
+        if (x_count == board->get_board_size()) {
+        return "X";
+      }
+
+      if (o_count == board->get_board_size()) {
+        return "O";
+      }
+
   return "_";
 }
 
