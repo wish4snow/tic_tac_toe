@@ -36,7 +36,7 @@ string Rules::has_winner() {
         x_count = 0;
     o_count = 0;
     for (int j = board->get_board_size() * i; j <= board->get_board_size() * (i + 1); j++) {
-      cout << j;
+      
       if (board->get_mark(j) == "X") {
         x_count++;
       }
@@ -55,7 +55,7 @@ string Rules::has_winner() {
       cout << "from row" << endl;
       return "O";
     }
-    cout << endl;
+    
 
   }
 
@@ -72,7 +72,7 @@ string Rules::has_winner() {
       if (board->get_mark(j) == "O") {
         o_count++;
       }
-      cout << ":" << x_count << endl;
+      
       if (x_count == board->get_board_size()) {
         cout << "from col" << endl;
         return "X";
@@ -85,9 +85,30 @@ string Rules::has_winner() {
 
     }
 
-    cout << endl;
 
   }
+         x_count = 0;
+      o_count = 0;
+
+  for (int i = 0; i < board->get_board_size(); i++){
+    cout << "`" << (i + 1) + (i * board->get_board_size()) << "`";
+    if (board->get_mark((i + 1) + (i * board->get_board_size())) == "X") {
+      x_count++;
+    }
+        if (board->get_mark((i + 1) + (i * board->get_board_size())) == "O") {
+      o_count++;
+    }
+  }
+
+        if (x_count == board->get_board_size()) {
+        cout << "from col" << endl;
+        return "X";
+      }
+
+      if (o_count == board->get_board_size()) {
+        cout << "from col" << endl;
+        return "O";
+      }
     // if (board->get_mark(1) == board->get_mark(2) && board->get_mark(2) == board->get_mark(3)) {
     //   return board->get_mark(1);
     // } else if (board->get_mark(4) == board->get_mark(5) && board->get_mark(5) == board->get_mark(6)) {
