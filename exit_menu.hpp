@@ -13,5 +13,4 @@ private:
 public:
   ExitMenu(Game *game);
   void execute();
-  //static void start_menu(Board *board, Player *player1, Player *player2);
 };

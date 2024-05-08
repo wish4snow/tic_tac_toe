@@ -4,6 +4,5 @@
 class Player
 {
 public:
-  // Player();
   virtual void move(Rules *rules_ptr) = 0;
 };
