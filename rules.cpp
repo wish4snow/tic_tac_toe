@@ -10,7 +10,7 @@ using namespace std;
   bool Rules::validate_input(int input)
   {
      //string current_mark = board->get_mark(input);
-    if (input < 1 || input > 9 || board->get_mark(input) == "O" || board->get_mark(input) == "X") {
+    if (input < 1 || input > (board->get_board_size() * board->get_board_size()) || board->get_mark(input) == "O" || board->get_mark(input) == "X") {
       return false;
     }
     return true;
