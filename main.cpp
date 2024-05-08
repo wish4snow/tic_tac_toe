@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-  Board board = Board(4);
+  Board board;
   Board *board_ptr = &board;
 
   ConsoleBoardCreator creator = ConsoleBoardCreator(board_ptr);
@@ -45,6 +45,13 @@ int main()
 
     player_two_ptr = new ComputerPlayer(&board, 'O');
   }
+
+  cout << "\nPick a number of spaces." << endl ;
+  cout << ":";
+
+  cin >> user_input;
+
+  board = Board(stoi(user_input));
 
   Game game = Game(board_ptr, rules_ptr, creator_ptr, player_one_ptr, player_two_ptr);
   game.start();
