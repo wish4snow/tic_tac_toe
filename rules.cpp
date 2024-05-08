@@ -4,12 +4,12 @@
 using namespace std;
   Rules::Rules(Board *inputted_board)
   {
-    board = inputted_board;
+    this->board = inputted_board;
   }
 
   bool Rules::validate_input(int input)
   {
-    // string current_mark = board->get_mark(input);
+     //string current_mark = board->get_mark(input);
     if (input < 1 || input > 9 || board->get_mark(input) == "O" || board->get_mark(input) == "X") {
       return false;
     }

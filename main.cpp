@@ -1,4 +1,3 @@
-
 #include "game.h"
 #include "player.hpp"
 #include "human_player.hpp"
@@ -24,7 +23,7 @@ int main()
   cout << "Hello, welcome to tic tac toe!" << endl;
   cout << "Enter a number to chose mode.\n" << endl;
   cout << "1: human vs human" << endl;
-  cout << "2: human vs computer\n\n:";
+  cout << "2: human vs computer\n:";
 
   string user_input;
   cin >> user_input;

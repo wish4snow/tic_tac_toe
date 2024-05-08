@@ -10,5 +10,5 @@ private:
 
 public:
   ComputerPlayer(Board *inputted_board, char symbol);
-  void move() override;
+  void move(Rules *rules_ptr) override;
 };

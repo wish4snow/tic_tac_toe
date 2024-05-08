@@ -1,6 +1,7 @@
 #pragma once
 #include "board.h"
 #include "player.hpp"
+#include "rules.h"
 
 class HumanPlayer : public Player
 {
@@ -10,5 +11,5 @@ private:
 
 public:
   HumanPlayer(Board *inputted_board, char symbol);
-  void move() override;
+  void move(Rules *rules_ptr) override;
 };

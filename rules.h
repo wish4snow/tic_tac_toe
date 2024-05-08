@@ -1,5 +1,6 @@
 #pragma once
 #include "print_board.h"
+#include "board.h"
 
 class Rules {
   private:

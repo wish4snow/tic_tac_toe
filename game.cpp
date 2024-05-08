@@ -35,7 +35,7 @@ using namespace std;
       
 
       cout << "\nWhich cell would you like to pick, Player " << player_number << "?" << endl;
-      current_player->move();
+      current_player->move(rules);
       switch_player();
       // cin >> user_input;
 

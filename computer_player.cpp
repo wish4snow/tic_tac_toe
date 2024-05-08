@@ -8,7 +8,7 @@ ComputerPlayer::ComputerPlayer(Board *inputted_board, char symbol){
   this->symbol = symbol;
 }
 
-void ComputerPlayer::move(){
+void ComputerPlayer::move(Rules *rules_ptr){
   int number = (rand() % (9 - 0 + 1)) + 0;
   
   // while (get_mark(number) != 'X' || get_mark(number) != 'O'){
